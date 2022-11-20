@@ -8,7 +8,7 @@
 
 ### Loading data
 
-The used ["https://archive.ics.uci.edu/ml/datasets/internet+advertisements"](dataset) comes in a custom format( described in the [ad.DOCUMENTATION](dataset documentation)), so the first step is to parse the dataset and convert it to the more familiar and Pandas-friendly .csv format. [ad_data_parse.ipynb](This is the notebook) achieves this.
+The used ["https://archive.ics.uci.edu/ml/datasets/internet+advertisements"](dataset) comes in a custom format (described in the [./ad.DOCUMENTATION](dataset documentation)), so the first step is to parse the dataset and convert it to the more familiar and Pandas-friendly .csv format. [./ad_data_parse.ipynb](This is the notebook) achieves this.
 
 ## Imputing / Dropping (???)
 
