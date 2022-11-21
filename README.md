@@ -4,7 +4,7 @@
 
 ### Loading data
 
-The used [dataset](https://archive.ics.uci.edu/ml/datasets/internet+advertisements) comes in a custom unformatted document (described in the [dataset documentation](./ad.DOCUMENTATION)), so the first step is to parse the dataset and convert it to the more familiar and Pandas-friendly .csv format. [The ad_data_parse notebook](./ad_data_parse.ipynb) achieves this.
+The used [dataset](https://archive.ics.uci.edu/ml/datasets/internet+advertisements) comes in a custom unformatted document (described in the [dataset documentation](./ad.DOCUMENTATION)), so the first step is to parse the dataset and convert it to the more familiar and Pandas-friendly .csv format. The [ad_data_parse notebook](./ad_data_parse.ipynb) achieves this.
 
 ## Imputing / Dropping
 
@@ -18,7 +18,7 @@ Once we convert the string values to numeric formatting, we can see that most of
 
 ### Exploring and plotting
 
-The next step is to get to know the shape of the data, the statistical attributes of each featrure, and its distribution. In order to do that, visual analysis can be conducted with the use of scatter plots and histograms in [this notebook](./data-exploration.ipynb). The following plots show the distribution of the continuous or non-binary variables: image width, height, and aspect ratio, stratified by the class (ad/non-ad) of the image.
+The next step is to get to know the shape of the data, the statistical attributes of each featrure, and its distribution. In order to do that, visual analysis can be conducted with the use of scatter plots and histograms in the [data-exploration notebook](./data-exploration.ipynb). The following plots show the distribution of the continuous or non-binary variables: image width, height, and aspect ratio, stratified by the class (ad/non-ad) of the image.
 
 ![image](https://user-images.githubusercontent.com/37519138/202835315-090892b8-6d0a-45a2-ac63-aa27daae4087.png)
 
