@@ -30,4 +30,14 @@ We also measured the correlation of the continuous/non-binary variables to test 
 
 ![download](https://user-images.githubusercontent.com/79494397/202986590-191cede4-5f83-49f5-890a-545f24b0c5db.png)
 
+### Scaling
 
+We split our data into train and test data. To scale our data, we used min-max scaler since our continuous variables are not normally distributed. We didn't scale the features that were binary-encoded because there is no need to.
+
+### Logistic Regression Model
+
+Our first model for our data is a logistic regression model. We fit the model using the min-max scaled X_train and y_train. With our training data, we were able to achieve an accuracy of 0.99, and our testing data gave us an accuracy of 0.98.
+
+### Simple Neural Net Model
+
+The second model we created is a neural net model with 1 input layer, 2 hidden layers, and 1 output layer. The input layer has 16 nodes and uses relu activation function. The 2 hidden layers also use relu activation functions, but the first uses 8 nodes and the second hidden layer uses 6 nodes. Finally, the output layer uses a sigmoid activation function. With our neural network model, we were able to achieve an accuracy of 0.99.
