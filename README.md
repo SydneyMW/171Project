@@ -28,7 +28,7 @@ The datapoints appear clustered in the scatter plots, but from the histogram of 
 
 We also measured the correlation of the continuous/non-binary variables to test for height, ratio, width, and class correlation, and interestingly, identified correlation between ad classification and image width.  This will likely be an important feature to include in our model building.
 
-![download](https://user-images.githubusercontent.com/79494397/202986590-191cede4-5f83-49f5-890a-545f24b0c5db.png)
+![image](https://user-images.githubusercontent.com/37519138/204183883-2f1ec76b-3907-4616-9d80-2567d45840af.png)
 
 ### Scaling
 
