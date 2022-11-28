@@ -1,6 +1,6 @@
 # ECS 171 Project: Ad Classification
 
-## Preprocess
+## Milestone 2 - Preprocess
 
 ### Loading data
 
@@ -33,6 +33,8 @@ We also measured the correlation of the continuous/non-binary variables to test 
 ### Scaling
 
 We split our data into train and test data. To scale our data, we used min-max scaler since our continuous variables are not normally distributed. We didn't scale the features that were binary-encoded because there is no need to.
+
+## Milestone 3 - Model construction
 
 ### Logistic Regression Model
 
