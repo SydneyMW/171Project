@@ -40,7 +40,7 @@ The logistic regression model is developed in the [modeling notebook](./3_prepro
 
 ### Simple Neural Net Model
 
-The second model we created, also in the [modeling notebook](./3_preprocess_logreg_neuralnet.ipynb), is a neural net model with 1 input layer, 2 hidden layers, and 1 output layer. The input layer has 16 nodes and uses relu activation function. The 2 hidden layers also use relu activation functions, but the first uses 8 nodes and the second hidden layer uses 6 nodes. Finally, the output layer uses a sigmoid activation function. With our neural network model, we were able to achieve a testing accuracy of 0.99.  The high training and testing performance of the neural net despite its unnecessary complexity indicates that we may attribute both of our model's success to the quality of the data fed to each, since both simple and complex models are able to perform well with little optimization.
+The second model we created, also in the [modeling notebook](./3_preprocess_logreg_neuralnet.ipynb), is a neural net model with 1 input layer, 2 hidden layers, and 1 output layer. The input layer has 16 nodes and uses relu activation function. The 2 hidden layers also use relu activation functions, but the first uses 8 nodes and the second hidden layer uses 6 nodes. Finally, the output layer uses a sigmoid activation function. With our neural network model, we were able to achieve a training accuracy of 0.99 and a testing accuracy of 0.97.  The high training and testing performance of the neural net despite its unnecessary complexity indicates that we may attribute both of our model's success to the quality of the data fed to each, since both simple and complex models are able to perform well with little optimization.
 
 ## Model Fitting
 
