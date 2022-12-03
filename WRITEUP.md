@@ -55,7 +55,7 @@ The correlation matrix (Figure 2) shows the correlation coefficients between the
 
 ## Collaboration
 
-**Giulio:**
+**Giulio:** code for SVM classification, improved Neural Network training curve plots, code for exploratory histogram plot, wrote 1st version of the README
 
 **Sarah:**
 
