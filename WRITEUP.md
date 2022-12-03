@@ -15,7 +15,9 @@
 
 ### Figure 3 &mdash; Neural Net Training Curves
 ...
-![download](https://user-images.githubusercontent.com/79494397/205412971-9c1229df-34a2-4fd7-9700-6b0357e9ebb5.png)
+![image](https://user-images.githubusercontent.com/37519138/205465185-981df9ed-3c46-440e-bb3d-24583296ba08.png)
+![image](https://user-images.githubusercontent.com/37519138/205465190-b6bce9be-270f-49a1-9f5a-422972cdd67c.png)
+
 
 ## Methods
 
