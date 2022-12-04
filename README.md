@@ -46,6 +46,9 @@ The correlation matrix (Figure 2) shows the correlation coefficients between the
 ### 5. Model 2 &mdash; Adversarial Neural Net Classifier
 ...
 
+### 6. Model 3 &mdash; Support Vector Machine
+...
+
 ## Results
 ...
 
