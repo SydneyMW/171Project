@@ -62,9 +62,21 @@ The final csv is in a much more accessible format:
 ### 2. Data Pre-Processing &mdash; Cleaning, imputing and scaling data
 Once we have formatted data, we want analyze its features, check for null or unknown values, and perform dropping/imputing/scaling as needed.  We find that the dataset has over 1500 features and over 3000 observations, with all but four features (height, width, aratio, and local) being binary-encoded.  Those that are not binary-encoded are represented with fixed-digit string literals due to the odd unstructured format of the original document, with unknown values represented by a '?' character.  
 
-We find that for image height, width, and aspect ratio, about 27% of the records have unknown values, so we impute them with the respective mean values of those features.  For the 'local' variable, less than 1% of the data has unknown values, so we simply drop these observations.  After imputing and dropping the unknown values, we must convert the data to numeric format.
+We find that for image height, width, and aspect ratio, about 27% of the records have unknown values, so we impute them with the respective mean values of those features.  For the 'local' variable, less than 1% of the data has unknown values, so we simply drop these observations.  The imputing and dropping is performed in the [preprocessing notebook](./3_preprocess_logreg_neuralnet.ipynb) with the following code:
+```
+valid_height_mean = int(pd.to_numeric(data.height[data.height != '   ?']).mean())
+valid_width_mean = int(pd.to_numeric(data.width[data.width != '   ?']).mean())
+valid_aratio_mean = int(pd.to_numeric(data.aratio[data.aratio != '     ?']).mean())
 
-Once we convert the string values to numeric formatting, we can see that most of the features, such as url, are already one-hot encoded, so there's no additional encoding to be done.  Min-max scaling is unnecessary for binary-encoded data, but can be applied to our several non-binary-encoded features, including height, width, and aspect ratio.  We therefore implement a min-max scaler to scale our data for more efficient computation and feature comparison in the future.  We choose min-max scaling due to its simplicity and the lack of normal distribution among all continuous variables, shown by our pairplot in the data exploration section (described next).
+data.height[data.height == '   ?'] = height_mean
+data.width[data.width == '   ?'] = width_mean
+data.aratio[data.aratio == '     ?'] = aratio_mean
+data = data[data.local != '   ?']
+data = data[data.local != '?']
+```
+After imputing and dropping the unknown values, we must convert the data to numeric format.
+
+Once we convert the string values to numeric formatting, we can see that most of the features, such as url, are already one-hot encoded, so there's no additional encoding to be done.  Min-max scaling is unnecessary for binary-encoded data, but can be applied to our several non-binary-encoded features, including height, width, and aspect ratio.  We therefore implement a min-max scaler to scale our data for more efficient computation and feature comparison in the future.  We choose min-max scaling due to its simplicity and the lack of normal distribution among all continuous variables, shown by our pairplot (Figure 1) in the data exploration section (described next).
 
 This processing, imputing, and scaling is performed in the [preprocessing notebook](./3_preprocess_logreg_neuralnet.ipynb) prior to model development.
 
