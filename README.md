@@ -75,10 +75,26 @@ data = data[data.local != '   ?']
 data = data[data.local != '?']
 ```
 After imputing and dropping the unknown values, we must convert the data to numeric format.
+```
+data = data.apply(pd.to_numeric)
+```
+Once we convert the string values to numeric formatting, we can see that most of the features, such as url, are already one-hot encoded, so there's no additional encoding to be done.  The target label column 'ad' is represented with strings 'ad.' or 'nonad.', and must be converted to binary encoding:
+```
+data['is_ad'] = data.ad == 'ad.'
+data = data.drop(columns = 'ad')
+```
+Min-max scaling is unnecessary for binary-encoded data, but can be applied to our several non-binary-encoded features, including height, width, and aspect ratio.  We therefore implement a min-max scaler to scale our data for more efficient computation and feature comparison in the future.  We choose min-max scaling due to its simplicity and the lack of normal distribution among all continuous variables, shown by our pairplot (Figure 1) in the data exploration section (described next).
+We also split our data into training and testing data, with an 80:20 train:test ratio, and implement scaling with the code:
+```
+train, test = train_test_split(data, test_size=0.2, random_state=1)
+X_train, y_train = train.drop(columns=['is_ad']), train['is_ad']
+X_test, y_test = test.drop(columns=['is_ad']), test['is_ad']
 
-Once we convert the string values to numeric formatting, we can see that most of the features, such as url, are already one-hot encoded, so there's no additional encoding to be done.  Min-max scaling is unnecessary for binary-encoded data, but can be applied to our several non-binary-encoded features, including height, width, and aspect ratio.  We therefore implement a min-max scaler to scale our data for more efficient computation and feature comparison in the future.  We choose min-max scaling due to its simplicity and the lack of normal distribution among all continuous variables, shown by our pairplot (Figure 1) in the data exploration section (described next).
-
-This processing, imputing, and scaling is performed in the [preprocessing notebook](./3_preprocess_logreg_neuralnet.ipynb) prior to model development.
+scaler = MinMaxScaler()
+X_train_mm = scaler.fit_transform(X_train)
+X_test_mm = scaler.fit_transform(X_test)
+```
+This processing, imputing, splitting, and scaling is performed in the [preprocessing notebook](./3_preprocess_logreg_neuralnet.ipynb) prior to model development.
 
 ### 3. Data Exploration &mdash; Visualizing data
 The next step is to get to know the shape of the data, the statistical attributes of each featrure, and its distribution. In order to do that, visual analysis can be conducted with the use of a pairplot and correlation matrix in the [data_exploration notebook](./2_data_exploration.ipynb). 
