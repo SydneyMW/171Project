@@ -22,7 +22,33 @@
 ## Methods
 
 ### 1. Data Pre-processing &mdash; Getting unstructured data into a structured format
-The used [dataset](https://archive.ics.uci.edu/ml/datasets/internet+advertisements) comes in a custom unformatted document (described in the [dataset documentation](./ad.DOCUMENTATION)), so the first step is to parse the dataset and convert it to the more familiar and Pandas-friendly .csv format.  We use the features described in the [names file](./dataset/ad.names) to convert the [data](./dataset/ad.data) to a pandas dataframe, which we save as our [data csv file](./dataset/data.csv). This data processing and csv creation is accomplished in the [ad_data_parse notebook](./1_ad_data_parse.ipynb).
+The used [dataset](https://archive.ics.uci.edu/ml/datasets/internet+advertisements) comes in a custom unformatted document (described in the [dataset documentation](./ad.DOCUMENTATION)), so the first step is to parse the dataset and convert it to the more familiar and Pandas-friendly .csv format.  We use the features described in the [names file](./dataset/ad.names) to convert the [data](./dataset/ad.data) to a pandas dataframe, which we save as our [data csv file](./dataset/data.csv). 
+The original data csv contains the observations but has no column names and looks like this:
+|    |    0 |    1 |      2 |   3 |   4 |   5 |   6 |   7 |   8 |   9 |
+|---:|-----:|-----:|-------:|----:|----:|----:|----:|----:|----:|----:|
+|  0 |  125 |  125 | 1      |   1 |   0 |   0 |   0 |   0 |   0 |   0 |
+|  1 |   57 |  468 | 8.2105 |   1 |   0 |   0 |   0 |   0 |   0 |   0 |
+|  2 |   33 |  230 | 6.9696 |   1 |   0 |   0 |   0 |   0 |   0 |   0 |
+|  3 |   60 |  468 | 7.8    |   1 |   0 |   0 |   0 |   0 |   0 |   0 |
+|  4 |   60 |  468 | 7.8    |   1 |   0 |   0 |   0 |   0 |   0 |   0 |
+
+Whereas the names file contains unstructured feature names in this format:
+|    | Original                                                  |
+|---:|:----------------------------------------------------------|
+|  0 | | "w:\c4.5\alladA" names file -- automatically generated! |
+|  1 |                                                           |
+|  2 | ad, nonad | classes.                                      |
+|  3 |                                                           |
+|  4 | height: continuous.                                       |
+|  5 | width: continuous.                                        |
+|  6 | aratio: continuous.                                       |
+|  7 | local: 0,1.                                               |
+|  8 | | 457 features from url terms                             |
+|  9 | url\*images+buttons: 0,1.                                  |
+| 10 | url\*likesbooks.com: 0,1.                                  |
+| 11 | url\*www.slake.com: 0,1.                                   |
+The names are in order, and must be parsed and assigned to the dataframe to create the final csv of our features and observations.
+This data processing and csv creation is accomplished in the [ad_data_parse notebook](./1_ad_data_parse.ipynb).
 
 ### 2. Data Pre-Processing &mdash; Cleaning, imputing and scaling data
 Once we have formatted data, we want analyze its features, check for null or unknown values, and perform dropping/imputing/scaling as needed.  We find that the dataset has over 1500 features and over 3000 observations, with all but four features (height, width, aratio, and local) being binary-encoded.  Those that are not binary-encoded are represented with fixed-digit string literals due to the odd unstructured format of the original document, with unknown values represented by a '?' character.  
