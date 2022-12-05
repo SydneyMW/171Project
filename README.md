@@ -47,6 +47,7 @@ Whereas the names file contains unstructured feature names in this format:
 |  9 | url\*images+buttons: 0,1.                                  |
 | 10 | url\*likesbooks.com: 0,1.                                  |
 | 11 | url\*www.slake.com: 0,1.                                   |
+
 The names are in order, and must be parsed and assigned to the dataframe to create the final csv of our features and observations.
 This data processing and csv creation is accomplished in the [ad_data_parse notebook](./1_ad_data_parse.ipynb).
 
