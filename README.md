@@ -50,6 +50,14 @@ Whereas the names file contains unstructured feature names in this format:
 
 The names are in order, and must be parsed and assigned to the dataframe to create the final csv of our features and observations.
 This data processing and csv creation is accomplished in the [ad_data_parse notebook](./1_ad_data_parse.ipynb).
+The final csv is in a much more accessible format:
+|    |   height |   width |   aratio |   local |   url*images+buttons |   url*likesbooks.com |   url*www.slake.com |   url*hydrogeologist |   url*oso |   url*media |
+|---:|---------:|--------:|---------:|--------:|---------------------:|---------------------:|--------------------:|---------------------:|----------:|------------:|
+|  0 |      125 |     125 |   1      |       1 |                    0 |                    0 |                   0 |                    0 |         0 |           0 |
+|  1 |       57 |     468 |   8.2105 |       1 |                    0 |                    0 |                   0 |                    0 |         0 |           0 |
+|  2 |       33 |     230 |   6.9696 |       1 |                    0 |                    0 |                   0 |                    0 |         0 |           0 |
+|  3 |       60 |     468 |   7.8    |       1 |                    0 |                    0 |                   0 |                    0 |         0 |           0 |
+|  4 |       60 |     468 |   7.8    |       1 |                    0 |                    0 |                   0 |                    0 |         0 |           0 |
 
 ### 2. Data Pre-Processing &mdash; Cleaning, imputing and scaling data
 Once we have formatted data, we want analyze its features, check for null or unknown values, and perform dropping/imputing/scaling as needed.  We find that the dataset has over 1500 features and over 3000 observations, with all but four features (height, width, aratio, and local) being binary-encoded.  Those that are not binary-encoded are represented with fixed-digit string literals due to the odd unstructured format of the original document, with unknown values represented by a '?' character.  
