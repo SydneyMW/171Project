@@ -230,7 +230,7 @@ From our results, we see that we can predict with high accuracy whether an image
 
 ## Collaboration
 
-**Giulio:** code for SVM classification, improved Neural Network training curve plots, code for exploratory histogram plot, wrote 1st version of the README
+**Giulio:** communication facilitator, code for SVM classification, improved Neural Network training curve plots, code for exploratory histogram plot
 
 **Sarah:** wrote about scaling, logistic reg model, and neural net model for milestone, wrote about model 1, 2, and 3 in methods, wrote part of conclusion
 
