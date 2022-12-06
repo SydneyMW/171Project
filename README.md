@@ -187,6 +187,7 @@ Another visual component of our data preprocessing and exploration process, is a
 
 ### 2. Model 1 -- Logistic Regression
 
+The first model 
 
 #### Figure 3.1 -- LR Classification Report (Training)
 
@@ -226,6 +227,7 @@ Another visual component of our data preprocessing and exploration process, is a
 
 ### Overall Model Choice Rationale 
 
+In preparation for model building, we first had to assess the problem in question and the dataset we are to wrok with, in order to make an adequate model choice. Therefore, referring back to the binary classification structure of ad/non-ad predictions, we first chose to build a Logistic Regression Model. In additon to that, we chose this model because of its' relatively simple implementation, and ability to mitigate the issue of our dataset having a lot of distinctive features. Our next model choice was a Simple Neural Net Classifier, that allowed us to perform a more complex analysis. Although the number of layers and overall structure of this model might have been a little too complex for our problem of interest, we wanted to see if model complexity would have an impact. The third model was chosen to be built mostly out of curiosity, as a sort of sanity check on the results of the other two models.
 
 ### Models Performance Assessment 
 
@@ -238,12 +240,13 @@ Referring back to *Figure 3.1* and *Figure 3.2*, we conclude that our model was 
 The performance of our Neural Net Classifier was comparatevely as good as that of a simpler model analyzed above. As it can be seen from *Figure 4.1* and *Figure 4.2*, the   model achieved a training accuracy of 0.99 and a testing accuracy of 0.97. Despite the complexity and multi-layer constitution of the neural net, our model was able to perfrom extremely well. Such consistency of results between the first two models built indicates a high elvel of quality of the data used. 
 
 **3. SVM Model:** 
-    
+The last model implemented to address the classification problem in question was a Support Vector Machine. Here, we should make a note of the fact that despite the great success of the two other models implemented, we ended up deciding to perform an SVM training as well, majorly out of curiocity. As expected, by this point, the testing results of our model reached an accuracy of 0.97, which can be seen in *Figure 5*. Again, ultimate success. 
 
-
+### Footnote 
+All of the three models implemented to classify images on a website as adverisment showed consistently high accuracy, as well as very close similarity between the results acquired from testing and training the data partitions in each of the models. As mentioned previously, such success can be attributed, most likely, to the fact that the data fed into the models is of high level of quality and predictiveness. 
 
 ## Conclusion
-From our results, we see that we can predict with high accuracy whether an image on a website  with the same independent features is an advertisement or not with the models we created with UC Irvine’s Internet Advertisements dataset. We believe our models could be useful in identifying advertisements in websites for ad blocking or search engine results. Because the Internet undergoes many changes, our models’ accuracy could be much worse when trying to predict on more recent data since the dataset we trained with is from 1998. Therefore, we could train our models with more recent data for further optimization of our classifying models. On the other hand, adding more training data may also significantly increase the complexity of the models. So, creating a brand new model for newer ads may be a more appropriate approach. The specific method chosen depends on the types of ads a client would most want to classify. 
+From our results, we see that we can predict with high accuracy whether an image on a website  with the same independent features is an advertisement or not with the models we created with UC Irvine’s Internet Advertisements dataset. We believe our models could be useful in identifying advertisements in websites for ad blocking or search engine results. Because the Internet undergoes many changes, our models’ accuracy could be much worse when trying to predict on more recent data since the dataset we trained with is from 1998. Therefore, we could train our models with more recent data for further optimization of our classifying models.
 
 ## Collaboration
 
@@ -251,7 +254,7 @@ From our results, we see that we can predict with high accuracy whether an image
 
 **Sarah:** wrote about scaling, logistic reg model, and neural net model for milestone, wrote about model 1, 2, and 3 in methods, wrote part of conclusion
 
-**Liudmila:**
+**Liudmila:** wrote results, discussion and a part of conclusion in the final report, as well as supplied images for respective parts; restructured and finilized the final report to fit requirements. 
 
 **Henry:**
 
