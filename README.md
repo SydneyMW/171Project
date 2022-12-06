@@ -190,7 +190,7 @@ Another visual component of our data preprocessing and exploration process, is a
 
 ### 2. Model 1 -- Logistic Regression
 
-The Logistic Regression Model's results are gathered and furthered assesed based on a classification report. Displayed below is the data we gathered in respect to both training and testing data partitions.
+The Logistic Regression Model's results are gathered and furthere assesed based on a classification report. Displayed below is the data we gathered in respect to both training and testing data partitions.
 
 #### Figure 3.1 -- LR Classification Report (Training)
 
@@ -203,7 +203,7 @@ The Logistic Regression Model's results are gathered and furthered assesed based
 
 ### 3. Model 2 -- Adversarial Neural Net Classifier
 
-In order to asess the success of our Neural Net model, we kept track of losses during training and testing, in addition to displaying classification report for both data partitions, similarly to our first model. The results to both can be find below. 
+In order to assess the success of our Neural Net model, we kept track of losses during training and testing, in addition to displaying classification report for both data partitions, similarly to our first model. The results to both can be found below. 
 
 #### Figure 4.1 -- NN Classification Report (Training)
 
