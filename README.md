@@ -219,7 +219,7 @@ In order to asess the success of our Neural Net model, we kept track of losses d
 ![image](https://user-images.githubusercontent.com/75039761/205835836-3453e670-d9a6-48fc-918f-7d9e37ee28f0.png)
 
 ### 4. Model 3 -- Support Vector Machine 
-Finally, the outcomes of our third model, the SVM Claasifier, are dispalyed in the form of a training classification report in the figure below. 
+Finally, the outcomes of our third model, the SVM Classifier, are dispalyed in the form of a training classification report in the figure below. 
 
 #### Figure 5 -- SVM Classification Report (Testing)
 
@@ -227,6 +227,7 @@ Finally, the outcomes of our third model, the SVM Claasifier, are dispalyed in t
 
 
 ## Discussion
+This section presents analysis of the findings described in the **Results** section, along with our rationale for building specified models in the first place. Here, we evaluate the performance of each of the models separately, as well as draw cummulative conclusions about our solution to the ad/no-ad classification problem. Additionally, possible shortcomings of our models are adressed below as well.
 
 ### Overall Model Choice Rationale 
 In preparation for model building, we first had to assess the problem in question and the dataset we are to wrok with, in order to make an adequate model choice. Therefore, referring back to the binary classification structure of ad/non-ad predictions, we first chose to build a Logistic Regression Model. In additon to that, we chose this model because of its' relatively simple implementation, and ability to mitigate the issue of our dataset having a lot of distinctive features. Our next model choice was a Simple Neural Net Classifier, that allowed us to perform a more complex analysis. Although the number of layers and overall structure of this model might have been a little too complex for our problem of interest, we wanted to see if model complexity would have an impact. The third model was chosen to be built mostly out of curiosity, as a sort of sanity check on the results of the other two models.
