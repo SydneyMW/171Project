@@ -206,4 +206,4 @@ From our results, we see that we can predict with high accuracy whether an image
 
 **Rongshan:**
 
-**Sydney:** code to turn unformatted data into useable csv, code to perform scaling and imputing on data and generate pairplot, code for preliminary logistic regression and neural net models and evaluation, wrote readme “Model Fitting” section
+**Sydney:** code to turn unformatted data into useable csv, code to perform scaling and imputing on data and generate pairplot, code for preliminary logistic regression and neural net models and evaluation, wrote “Model Fitting” section of milestone md, wrote data pre-processing and data exploration sections of readme md
