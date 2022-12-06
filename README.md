@@ -20,11 +20,12 @@ After ensuring no multicollinearity, we could confidently examine each independe
 ### Figure 3 &mdash; Neural Net Training Curves
 We employed a logistic regression model, a 3 layer neural network, and a SVM classifier to train and test on our dataset. With the neural network, we kept track of losses during training and testing, and found that while losses decreased over time in training, testing losses reached a minima very early on before spiking upwards, which may indicate slight overfitting of the model.
 
-![image](https://user-images.githubusercontent.com/37519138/205465185-981df9ed-3c46-440e-bb3d-24583296ba08.png)
+![image](https://user-images.githubusercontent.com/37519138/205830466-ee70c69d-1699-49dd-ac60-56cae1c80c68.png)
 
 Nevertheless, the neural network’s accuracy levels were fairly high in both training and validation sets. And according to all 3 models’ classification reports, the neural network did not underperform.
 
-![image](https://user-images.githubusercontent.com/37519138/205465190-b6bce9be-270f-49a1-9f5a-422972cdd67c.png)
+![image](https://user-images.githubusercontent.com/37519138/205830571-454772a3-5104-4863-ac0d-4123a25cecb0.png)
+
 
 
 ## Methods
