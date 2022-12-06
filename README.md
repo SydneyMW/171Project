@@ -243,7 +243,7 @@ The performance of our Neural Net Classifier was comparatevely as good as that o
 
 
 ## Conclusion
-From our results, we see that we can predict with high accuracy whether an image on a website  with the same independent features is an advertisement or not with the models we created with UC Irvine’s Internet Advertisements dataset. We believe our models could be useful in identifying advertisements in websites for ad blocking or search engine results. Because the Internet undergoes many changes, our models’ accuracy could be much worse when trying to predict on more recent data since the dataset we trained with is from 1998. Therefore, we could train our models with more recent data for further optimization of our classifying models.
+From our results, we see that we can predict with high accuracy whether an image on a website  with the same independent features is an advertisement or not with the models we created with UC Irvine’s Internet Advertisements dataset. We believe our models could be useful in identifying advertisements in websites for ad blocking or search engine results. Because the Internet undergoes many changes, our models’ accuracy could be much worse when trying to predict on more recent data since the dataset we trained with is from 1998. Therefore, we could train our models with more recent data for further optimization of our classifying models. On the other hand, adding more training data may also significantly increase the complexity of the models. So, creating a brand new model for newer ads may be a more appropriate approach. The specific method chosen depends on the types of ads a client would most want to classify. 
 
 ## Collaboration
 
