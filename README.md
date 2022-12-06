@@ -251,7 +251,7 @@ All of the three models implemented to classify images on a website as adverisme
 That being said, one shortcoming of our model is that we do not know if it would perform as successfully on a less predictive dataset. As mentioned before, our models achieve equally excellent accuracy, which might as well be a direct product of the high quality of the data used. On the other hand, given a less "perfect" data, we cannot quarantee good performance of either of our models.  
 
 ## Conclusion
-From our results, we see that we can predict with high accuracy whether an image on a website  with the same independent features is an advertisement or not with the models we created with UC Irvine’s Internet Advertisements dataset. We believe our models could be useful in identifying advertisements in websites for ad blocking or search engine results. However, it should be noted that the dataset in question is rather old (it dates back to 1998). It is also wirth noting that the majority of modern day websites display video advertisments, as well as picture advertisments. That being said, one possible direction of further improvement of our models would be to take into consideration the video counterpart of online ads. By the same extent, we also conslude that due to the Internet undergoing many changes, our models’ accuracy could suffer as well, when performing classification on a more recent picture-only dataset. Therefore, we could train our models with more recent data for further optimization of our classifying models. 
+From our results, we see that we can predict with high accuracy whether an image on a website  with the same independent features is an advertisement or not with the models we created with UC Irvine’s Internet Advertisements dataset. We believe our models could be useful in identifying advertisements in websites for ad blocking or search engine results. However, it should be noted that the dataset in question is rather old (it dates back to 1998). It is also worth noting that the majority of modern day websites display video advertisements, as well as picture advertisements. That being said, one possible direction of further improvement of our models would be to take into consideration the video counterpart of online ads. By the same extent, we also conclude that due to the Internet undergoing many changes, our models’ accuracy could suffer as well, when performing classification on a more recent picture-only dataset. Therefore, we could train our models with more recent data for further optimization of our classifying models. This would work, but adding more training data also has the possibility to significantly increase the complexity of the models. So, creating a brand new model for newer ads may also be another appropriate approach. The specific method chosen depends on the types of ads a client would most want to classify (old vs new vs a mix of both). In any case, the tool of ad classification lends itself to many uses.
 
 ## Collaboration
 
@@ -261,7 +261,7 @@ From our results, we see that we can predict with high accuracy whether an image
 
 **Liudmila:** wrote results, discussion and a part of conclusion in the final report, as well as supplied images for respective parts; restructured and finilized the final report to fit requirements. 
 
-**Henry:**
+**Henry:** code discussion, added on to introduction and conclusion
 
 **Rongshan:** plotted correlation figures during data preprocessing/exploration, wrote analysis on figures and significances to our results , wrote introduction
 
