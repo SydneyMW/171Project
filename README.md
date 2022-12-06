@@ -115,14 +115,14 @@ sns.heatmap(corr, cmap='RdBu', vmin=-1, vmax=1, annot=True)
 It shows the correlation coefficients between these same features.  Notably, there is a high correlation between ad classification and image width, so width will certainly be an important feature to include in our model building.
 
 ### 4. Model 1 &mdash; Logistic Regression
-...
+The first model we chose to test and create with our pre-processed data is a logistic regression model.
 
-To generate and fit the model:
+The following code is to generate and fit the model on the training data:
 ```
 logreg = LogisticRegression()
 logreg.fit(X_train_mm, y_train)
 ```
-To evaluate its predictions on training and testing data:
+The trained model is then used to predict the results of both the training and testing data as well as create a classification report of our model:
 ```
 yhat_train = logreg.predict(X_train_mm)
 print(classification_report(y_train, yhat_train))
@@ -132,9 +132,9 @@ print(classification_report(y_test, yhat_test))
 ```
 
 ### 5. Model 2 &mdash; Adversarial Neural Net Classifier
-...
+The second model we chose to test and create with our pre-processed data is a simple neural network. Besides the neural network’s output layer, the relu activation function is used. The input layer has 16 nodes, the first hidden layer has 8 nodes, and the second hidden layer as 6 nodes. The output layer has 1 node and uses sigmoid function.
 
-To generate and fit the model:
+We compile the neural network with rmsprop optimizer, binary_crossentropy loss function, and accuracy metrics, and then fit the model with a batch size of 1 and 25 epochs:
 ```
 classifier = Sequential() # Initialising the ANN
 classifier.add(Dense(units = 16, activation = 'relu', input_dim = 1558))
@@ -144,7 +144,7 @@ classifier.add(Dense(units = 1, activation = 'sigmoid')) # use sigmoid for final
 classifier.compile(optimizer = 'rmsprop', loss = 'binary_crossentropy', metrics = ["accuracy"])
 hist = classifier.fit(X_train_mm.astype(float), y_train, batch_size = 1, epochs = 25, validation_data=(X_test_mm, y_test))
 ```
-To evaluate its predictions on training and testing data:
+The trained model is then used to make predictions on the training and testing data:
 ```
 yhat_train = classifier.predict(X_train_mm.astype(float), verbose=False)
 yhat_train_binary = [ 1 if y>=0.5 else 0 for y in yhat_train ]
@@ -155,7 +155,7 @@ yhat_test_binary = [ 1 if y>=0.5 else 0 for y in yhat_test ]
 print(classification_report(y_test, yhat_test_binary))
 ```
 
-To plot model performance:
+Then, we plot the model’s performance:
 ```
 NN_history = pd.DataFrame(hist.history)
 NN_history.rename(
@@ -172,13 +172,14 @@ sns.lineplot(NN_history[["train_accuracy", "test_accuracy"]])
 ```
 
 ### 6. Model 3 &mdash; Support Vector Machine
-...
-To generate and fit the model:
+The last model we created to classify the data is a support vector machine.
+
+We generate the SVM with rbf kernel and fit the model with the training data set:
 ```
 svm = SVC(kernel="rbf", random_state=69420)
 svm.fit(X_train_mm,y_train)
 ```
-To evaluate model predictions:
+Then, we predicted the outcome of the testing set with the trained SVM:
 ```
 yhat = svm.predict(X_test_mm)
 print(classification_report(y_test, yhat))
@@ -197,7 +198,7 @@ print(classification_report(y_test, yhat))
 
 **Giulio:** code for SVM classification, improved Neural Network training curve plots, code for exploratory histogram plot, wrote 1st version of the README
 
-**Sarah:**
+**Sarah:** wrote about scaling, logistic reg model, and neural net model for milestone, wrote about model 1, 2, and 3 in methods
 
 **Liudmila:**
 
