@@ -97,20 +97,92 @@ X_test_mm = scaler.fit_transform(X_test)
 This processing, imputing, splitting, and scaling is performed in the [preprocessing notebook](./3_preprocess_logreg_neuralnet.ipynb) prior to model development.
 
 ### 3. Data Exploration &mdash; Visualizing data
-The next step is to get to know the shape of the data, the statistical attributes of each featrure, and its distribution. In order to do that, visual analysis can be conducted with the use of a pairplot and correlation matrix in the [data_exploration notebook](./2_data_exploration.ipynb). 
+The next step is to get to know the shape of the data, the statistical attributes of each feature, and its distribution. In order to do that, visual analysis can be conducted with the use of a pairplot and correlation matrix in the [data_exploration notebook](./2_data_exploration.ipynb). 
 
-The pairplot (Figure 1) shows the distribution of the height, width, and aratio variables, grouped by ad/non-ad classification.  The datapoints appear highly overlapping in the scatter plots, but from the histogram of the width and the aratio, we can see a clear distinction in the distribution of ads vs non-ads, with ads showing bimodal distribution for width and aratio, and non-ads showing roughly normal distribution.
+The pairplot (Figure 1) is generated using:
+```
+df_to_plot = df[['height', 'width', 'aratio', 'is_ad']]
+sns.pairplot(df_to_plot, hue='is_ad', plot_kws=dict(size=0.5))
+```
+It shows the distribution of the height, width, and aratio variables, grouped by ad/non-ad classification.  The datapoints appear highly overlapping in the scatter plots, but from the histogram of the width and the aratio, we can see a clear distinction in the distribution of ads vs non-ads, with ads showing bimodal distribution for width and aratio, and non-ads showing roughly normal distribution.
 
-The correlation matrix (Figure 2) shows the correlation coefficients between these same features.  Notable, there is a high correlation between ad classification and image width, so width will certainly be an important feature to include in our model building.
+The correlation matrix (Figure 2) is generated using:
+```
+heatmap_df = df[['height','width','aratio','is_ad']]
+corr = heatmap_df.corr()
+sns.heatmap(corr, cmap='RdBu', vmin=-1, vmax=1, annot=True)
+```
+It shows the correlation coefficients between these same features.  Notably, there is a high correlation between ad classification and image width, so width will certainly be an important feature to include in our model building.
 
 ### 4. Model 1 &mdash; Logistic Regression
 ...
 
+To generate and fit the model:
+```
+logreg = LogisticRegression()
+logreg.fit(X_train_mm, y_train)
+```
+To evaluate its predictions on training and testing data:
+```
+yhat_train = logreg.predict(X_train_mm)
+print(classification_report(y_train, yhat_train))
+
+yhat_test = logreg.predict(X_test_mm)
+print(classification_report(y_test, yhat_test))
+```
+
 ### 5. Model 2 &mdash; Adversarial Neural Net Classifier
 ...
 
+To generate and fit the model:
+```
+classifier = Sequential() # Initialising the ANN
+classifier.add(Dense(units = 16, activation = 'relu', input_dim = 1558))
+classifier.add(Dense(units = 8, activation = 'relu'))
+classifier.add(Dense(units = 6, activation = 'relu'))
+classifier.add(Dense(units = 1, activation = 'sigmoid')) # use sigmoid for final classifier unit
+classifier.compile(optimizer = 'rmsprop', loss = 'binary_crossentropy', metrics = ["accuracy"])
+hist = classifier.fit(X_train_mm.astype(float), y_train, batch_size = 1, epochs = 25, validation_data=(X_test_mm, y_test))
+```
+To evaluate its predictions on training and testing data:
+```
+yhat_train = classifier.predict(X_train_mm.astype(float), verbose=False)
+yhat_train_binary = [ 1 if y>=0.5 else 0 for y in yhat_train ]
+print(classification_report(y_train, yhat_train_binary))
+
+yhat_test = classifier.predict(X_test_mm.astype(float), verbose=False)
+yhat_test_binary = [ 1 if y>=0.5 else 0 for y in yhat_test ]
+print(classification_report(y_test, yhat_test_binary))
+```
+
+To plot model performance:
+```
+NN_history = pd.DataFrame(hist.history)
+NN_history.rename(
+    columns={
+        "loss": "train_loss",
+        "val_loss": "test_loss",
+        "accuracy": "train_accuracy",
+        "val_accuracy": "test_accuracy",
+        },
+    inplace=True,
+    )
+sns.lineplot(NN_history[["train_loss", "test_loss"]])
+sns.lineplot(NN_history[["train_accuracy", "test_accuracy"]])
+```
+
 ### 6. Model 3 &mdash; Support Vector Machine
 ...
+To generate and fit the model:
+```
+svm = SVC(kernel="rbf", random_state=69420)
+svm.fit(X_train_mm,y_train)
+```
+To evaluate model predictions:
+```
+yhat = svm.predict(X_test_mm)
+print(classification_report(y_test, yhat))
+```
 
 ## Results
 ...
