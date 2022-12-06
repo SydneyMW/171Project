@@ -1,24 +1,29 @@
 # ECS 171 Ad Classification Project: Final Writeup
 
 ## Introduction
-
-&nbsp;&nbsp;&nbsp;&nbsp;Among the plethora of elements on a modern website, viewers are almost guaranteed to come across the familiar, bothersome advertisement images. Popular search engines are taking note of this fact, as seen in Google’s Panda update, where the Panda algorithm helped the search engine rank the quality of a web page based on the locations and density of the page’s ads. And as the Internet continues to evolve, the ability to classify images as ads or not may be what decides whether a website appears on the front page of searches, or becomes buried in the sea of links. Therefore, having an accurate predictive classification model at one’s disposal will be vital for companies or individuals who want to be seen. Additionally, advertising also serves as a way of communicating information in an attempt to convince an audience of a particular idea. Young people are particularly susceptible to being targets of these ideas as they grow and develop. Therefore the power to recognize advertisements is an important tool for many reasons.  
-&nbsp;&nbsp;&nbsp;&nbsp;While advertisements can come in all shapes and sizes, there may exist certain strongly correlated properties that allow for accurately classifying an image as an ad or not an ad. These properties or features include the geometry of the image, phrases in the URL, the image's URL and alt text, the anchor text, and words occurring near the anchor text. Using UC Irvine’s Internet Advertisements dataset, we leverage a multitude of supervised machine learning methods to tackle the problem of classifying images as ads, including logistic regression, neural network, and support vector machine.
+Among the plethora of elements on a modern website, viewers are almost guaranteed to come across the familiar, bothersome advertisement images. Popular search engines are taking note of this fact, as seen in Google’s Panda update, where the Panda algorithm helped the search engine rank the quality of a web page based on the locations and density of the page’s ads. And as the Internet continues to evolve, the ability to classify images as ads or not may be what decides whether a website appears on the front page of searches, or becomes buried in the sea of links. Therefore, having an accurate predictive classification model at one’s disposal will be vital for companies or individuals who want to be seen. Additionally, advertising also serves as a way of communicating information in an attempt to convince an audience of a particular idea. Young people are particularly susceptible to being targets of these ideas as they grow and develop. Therefore the power to recognize advertisements is an important tool for many reasons. 
+While advertisements can come in all shapes and sizes, there may exist certain strongly correlated properties that allow for accurately classifying an image as an ad or not an ad. These properties or features include the geometry of the image, phrases in the URL, the image's URL and alt text, the anchor text, and words occurring near the anchor text. Using UC Irvine’s Internet Advertisements dataset, we leverage a multitude of supervised machine learning methods to tackle the problem of classifying images as ads, including logistic regression, neural network, and support vector machine.
 
 
 ## Figures
 
 ### Figure 1 &mdash; Pairplot
-...
+During our data exploration phase, we decided to begin by creating and examining possible trends between our independent variables (height, width, aspect ratio) as well as dependent variable (whether or not an image is an ad). We observed that the distribution of non-ad images followed a relatively normal distribution in comparison to ad images, no matter which single independent variable was used to determine the classification. More importantly, the pairplots provided insight on correlations between independent variables. This is a vital step in ensuring that our findings’ statistical significance is not undermined by multicollinearity, which is when independent variables exhibit high correlation among one another. Below is the entire pairplot, including the scatterplots showing the relationships between each set of independent variables. Note that no scatterplot shows extremely strong correlation, which indicates that we do not need to drop entire columns from our dataset to eliminate multicollinearity.
+
 ![image](https://user-images.githubusercontent.com/37519138/202835315-090892b8-6d0a-45a2-ac63-aa27daae4087.png)
 
 ### Figure 2 &mdash; Correlation Matrix
-...
+After ensuring no multicollinearity, we could confidently examine each independent variable’s correlation with our dependent variable, which was done through a correlation heatmap. Of the three variables height, width, and aspect ratio, we observed that image width showed disproportionately strong correlation to whether an image is an ad or not. With this knowledge, we were able to keep an eye out for this predictor during our modeling phase.
+
 ![image](https://user-images.githubusercontent.com/37519138/204183883-2f1ec76b-3907-4616-9d80-2567d45840af.png)
 
 ### Figure 3 &mdash; Neural Net Training Curves
-...
+We employed a logistic regression model, a 3 layer neural network, and a SVM classifier to train and test on our dataset. With the neural network, we kept track of losses during training and testing, and found that while losses decreased over time in training, testing losses reached a minima very early on before spiking upwards, which may indicate slight overfitting of the model.
+
 ![image](https://user-images.githubusercontent.com/37519138/205465185-981df9ed-3c46-440e-bb3d-24583296ba08.png)
+
+Nevertheless, the neural network’s accuracy levels were fairly high in both training and validation sets. And according to all 3 models’ classification reports, the neural network did not underperform.
+
 ![image](https://user-images.githubusercontent.com/37519138/205465190-b6bce9be-270f-49a1-9f5a-422972cdd67c.png)
 
 
@@ -205,8 +210,8 @@ From our results, we see that we can predict with high accuracy whether an image
 
 **Liudmila:**
 
-**Henry:** code discussion, writeup part of introduction
+**Henry:**
 
-**Rongshan:**
+**Rongshan:** plotted correlation graph during data preprocessing/exploration, wrote writeup introduction and figure sections, analyzed figures such as correlation matrix and neural net losses to ensure little multicollinearity and overfitting respectively.
 
 **Sydney:** code to turn unformatted data into useable csv, code to perform scaling and imputing on data and generate pairplot, code for preliminary logistic regression and neural net models and evaluation, wrote “Model Fitting” section of milestone md, wrote data pre-processing and data exploration sections of readme md
