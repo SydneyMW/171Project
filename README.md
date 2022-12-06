@@ -190,7 +190,7 @@ Another visual component of our data preprocessing and exploration process, is a
 
 ### 2. Model 1 -- Logistic Regression
 
-The Logistic Regression Model's results are gathered and furthered assesed based on a classification report. Displayed below is the data we gathered in respect to both training and testing data partitions.
+The Logistic Regression Model's results are gathered and further assesed based on a classification report. Displayed below is the data we gathered in respect to both training and testing data partitions.
 
 #### Figure 3.1 -- LR Classification Report (Training)
 
@@ -203,7 +203,7 @@ The Logistic Regression Model's results are gathered and furthered assesed based
 
 ### 3. Model 2 -- Adversarial Neural Net Classifier
 
-In order to asess the success of our Neural Net model, we kept track of losses during training and testing, in addition to displaying classification report for both data partitions, similarly to our first model. The results to both can be find below. 
+In order to assess the success of our Neural Net model, we kept track of losses during training and testing, in addition to displaying classification report for both data partitions, similarly to our first model. The results to both can be find below. 
 
 #### Figure 4.1 -- NN Classification Report (Training)
 
@@ -222,12 +222,11 @@ In order to asess the success of our Neural Net model, we kept track of losses d
 ![image](https://user-images.githubusercontent.com/75039761/205835836-3453e670-d9a6-48fc-918f-7d9e37ee28f0.png)
 
 ### 4. Model 3 -- Support Vector Machine 
-Finally, the outcomes of our third model, the SVM Classifier, are dispalyed in the form of a training classification report in the figure below. 
+Finally, the outcomes of our third model, the SVM Classifier, are dispalyed in the form of a testing classification report in the figure below. 
 
 #### Figure 5 -- SVM Classification Report (Testing)
 
 ![image](https://user-images.githubusercontent.com/75039761/205830661-59a32378-63d7-457c-85be-1d1c22fe698e.png)
-
 
 ## Discussion
 This section presents analysis of the findings described in the **Results** section, along with our rationale for building specified models in the first place. Here, we evaluate the performance of each of the models separately, as well as draw cummulative conclusions about our solution to the ad/no-ad classification problem. Additionally, possible shortcomings of our models are adressed below as well.
@@ -241,7 +240,7 @@ In preparation for model building, we first had to assess the problem in questio
 Referring back to *Figure 3.1* and *Figure 3.2*, we conclude that our model was able to achieve an accuracy of 0.99 in our training data partition, and an accuracy of 0.98 in our testing partition. Such high level of success, as well as very similar results in both training and testing error, indicates adequacy of our choice for the model and its implementation.
 
 **2. Adversarial Neural Net Model:**
-The performance of our Neural Net Classifier was comparatevely as good as that of a simpler model analyzed above. As it can be seen from *Figure 4.1* and *Figure 4.2*, the   model achieved a training accuracy of 0.99 and a testing accuracy of 0.97. Despite the complexity and multi-layer constitution of the neural net, our model was able to perfrom extremely well. Such consistency of results between the first two models built indicates a high elvel of quality of the data used. Additional observations can be made based on *Figure 4.3* and *Figure 4.4*, that reflect losses recorded fro both training and testing. As we can see, losses decreased over time in training, testing losses reached a minimum very early on before spiking upwards, which may indicate slight overfitting of the model. 
+The performance of our Neural Net Classifier was comparatevely as good as that of a simpler model analyzed above. As it can be seen from *Figure 4.1* and *Figure 4.2*, the model achieved a training accuracy of 0.99 and a testing accuracy of 0.97. Despite the complexity and multi-layer constitution of the neural net, our model was able to perfrom extremely well. Such consistency of results between the first two models built indicates a high elvel of quality of the data used. Additional observations can be made based on *Figure 4.3* and *Figure 4.4*, that reflect losses recorded fro both training and testing. As we can see, losses decreased over time in training, testing losses reached a minimum very early on before spiking upwards, which may indicate slight overfitting of the model. 
 
 **3. SVM Model:** 
 The last model implemented to address the classification problem in question was a Support Vector Machine. Here, we should make a note of the fact that despite the great success of the two other models implemented, we ended up deciding to perform an SVM training as well, majorly out of curiocity. As expected, by this point, the testing results of our model reached an accuracy of 0.97, which can be seen in *Figure 5*. Again, ultimate success. 
