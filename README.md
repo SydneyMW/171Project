@@ -175,13 +175,13 @@ The following section presents the data gathered after performing the preprocess
 Below, in *Figure 1*, is the pairplot, that was generated in the [data_exploration notebook](./2_data_exploration.ipynb) post data pre-processing completion. It shows the distribution of the height, width, and aratio variables, grouped by ad/non-ad classification.  The datapoints appear highly overlapping in the scatter plots, but from the histogram of the width and the aratio, we can see a clear distinction in the distribution of ads vs non-ads, with ads showing bimodal distribution for width and aratio, and non-ads showing roughly normal distribution.
 
 #### Figure 1 -- Pairplot
-...
+
 ![image](https://user-images.githubusercontent.com/37519138/202835315-090892b8-6d0a-45a2-ac63-aa27daae4087.png)
 
 Another visual component of our data preprocessing and exploration process, is a correlation matrix, presented below in *Figure 2*. It shows the correlation coefficients between the same three features as in the pairplot above. Here, we can notice that there is a high positive correlation between ad classification and image width. Such outcome allows us to conclude that width should be inCluded in our models, as it is one of the more important parameters. 
 
 #### Figure 2 -- Correlation Matrix
-...
+
 ![image](https://user-images.githubusercontent.com/37519138/204183883-2f1ec76b-3907-4616-9d80-2567d45840af.png)
 
 
@@ -189,37 +189,37 @@ Another visual component of our data preprocessing and exploration process, is a
 
 
 #### Figure 3.1 -- LR Classification Report (Training)
-...
-![image](https://user-images.githubusercontent.com/75039761/205826569-527b5d6e-b302-4604-880f-b6eec51d47bb.png")
+
+![image](https://user-images.githubusercontent.com/75039761/205826569-527b5d6e-b302-4604-880f-b6eec51d47bb.png)
 
 #### Figure 3.2 -- LR Classification Report (Testing)
-...
+
 ![image](https://user-images.githubusercontent.com/75039761/205826854-5b484762-2df8-480f-8ff7-1dcd4feefe27.png)
 
 
 ### 3. Model 2 -- Adversarial Neural Net Classifier
 
 #### Figure 4.1 -- NN Classification Report (Training)
-...
+
 ![image](https://user-images.githubusercontent.com/75039761/205829959-56f03f7b-4e04-4667-b4e6-7d84daa57b39.png)
 
 #### Figure 4.2 -- NN Classification Report (Testing)
-...
+
 ![image](https://user-images.githubusercontent.com/75039761/205829777-e921f9d0-27fe-4c57-85b0-3761e3c39273.png)
 
-#### Figure 4.3 -- NN Performance Plot
-...
-![image](https://user-images.githubusercontent.com/75039761/205829528-f0eb0fc6-bd75-4558-9f0b-13c32a4c0cdb.png)
+#### Figure 4.3 -- NN Performance Plot (Loss)
+
+![image](https://user-images.githubusercontent.com/75039761/205835718-a0b490c7-69cd-4980-abd3-594abcacd544.png)
+
+#### Figure 4.4 -- NN Performance Plot (Accuracy)
+
+![image](https://user-images.githubusercontent.com/75039761/205835836-3453e670-d9a6-48fc-918f-7d9e37ee28f0.png)
 
 ### 4. Model 3 -- Support Vector Machine 
 
 #### Figure 5 -- SVM Classification Report (Testing)
-...
+
 ![image](https://user-images.githubusercontent.com/75039761/205830661-59a32378-63d7-457c-85be-1d1c22fe698e.png)
-
-
-
-
 
 
 ## Discussion
