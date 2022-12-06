@@ -1,7 +1,10 @@
 # ECS 171 Ad Classification Project: Final Writeup
 
 ## Introduction
-...
+
+&nbsp;&nbsp;&nbsp;&nbsp;Among the plethora of elements on a modern website, viewers are almost guaranteed to come across the familiar, bothersome advertisement images. Popular search engines are taking note of this fact, as seen in Google’s Panda update, where the Panda algorithm helped the search engine rank the quality of a web page based on the locations and density of the page’s ads. And as the Internet continues to evolve, the ability to classify images as ads or not may be what decides whether a website appears on the front page of searches, or becomes buried in the sea of links. Therefore, having an accurate predictive classification model at one’s disposal will be vital for companies or individuals who want to be seen. Additionally, advertising also serves as a way of communicating information in an attempt to convince an audience of a particular idea. Young people are particularly susceptible to being targets of these ideas as they grow and develop. Therefore the power to recognize advertisements is an important tool for many reasons.  
+&nbsp;&nbsp;&nbsp;&nbsp;While advertisements can come in all shapes and sizes, there may exist certain strongly correlated properties that allow for accurately classifying an image as an ad or not an ad. These properties or features include the geometry of the image, phrases in the URL, the image's URL and alt text, the anchor text, and words occurring near the anchor text. Using UC Irvine’s Internet Advertisements dataset, we leverage a multitude of supervised machine learning methods to tackle the problem of classifying images as ads, including logistic regression, neural network, and support vector machine.
+
 
 ## Figures
 
@@ -202,7 +205,7 @@ From our results, we see that we can predict with high accuracy whether an image
 
 **Liudmila:**
 
-**Henry:**
+**Henry:** code discussion, writeup part of introduction
 
 **Rongshan:**
 
