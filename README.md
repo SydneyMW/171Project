@@ -94,7 +94,7 @@ scaler = MinMaxScaler()
 X_train_mm = scaler.fit_transform(X_train)
 X_test_mm = scaler.fit_transform(X_test)
 ```
-This processing, imputing, splitting, and scaling is performed in the [preprocessing notebook](./3_preprocess_logreg_neuralnet.ipynb) prior to model development.
+This processing, imputing, splitting, and scaling is performed in the [preprocess_logreg_neuralnet notebook](./3_preprocess_logreg_neuralnet.ipynb) prior to model development.
 
 ### 3. Data Exploration &mdash; Visualizing data
 The next step is to get to know the shape of the data, the statistical attributes of each feature, and its distribution. In order to do that, visual analysis can be conducted with the use of a pairplot and correlation matrix in the [data_exploration notebook](./2_data_exploration.ipynb). 
@@ -117,7 +117,7 @@ It shows the correlation coefficients between these same features.  Notably, the
 ### 4. Model 1 &mdash; Logistic Regression
 The first model we chose to test and create with our pre-processed data is a logistic regression model.
 
-The following code is to generate and fit the model on the training data:
+The following code in the [preprocess_logreg_neuralnet notebook](./3_preprocess_logreg_neuralnet.ipynb) is to generate and fit the model on the training data:
 ```
 logreg = LogisticRegression()
 logreg.fit(X_train_mm, y_train)
@@ -134,7 +134,7 @@ print(classification_report(y_test, yhat_test))
 ### 5. Model 2 &mdash; Adversarial Neural Net Classifier
 The second model we chose to test and create with our pre-processed data is a simple neural network. Besides the neural network’s output layer, the relu activation function is used. The input layer has 16 nodes, the first hidden layer has 8 nodes, and the second hidden layer as 6 nodes. The output layer has 1 node and uses sigmoid function.
 
-We compile the neural network with rmsprop optimizer, binary_crossentropy loss function, and accuracy metrics, and then fit the model with a batch size of 1 and 25 epochs:
+We compile the neural network with rmsprop optimizer, binary_crossentropy loss function, and accuracy metrics, and then fit the model with a batch size of 1 and 25 epochs in the [preprocess_logreg_neuralnet notebook](./3_preprocess_logreg_neuralnet.ipynb):
 ```
 classifier = Sequential() # Initialising the ANN
 classifier.add(Dense(units = 16, activation = 'relu', input_dim = 1558))
@@ -174,7 +174,7 @@ sns.lineplot(NN_history[["train_accuracy", "test_accuracy"]])
 ### 6. Model 3 &mdash; Support Vector Machine
 The last model we created to classify the data is a support vector machine.
 
-We generate the SVM with rbf kernel and fit the model with the training data set:
+In the [preprocess_logreg_neuralnet notebook](./3_preprocess_logreg_neuralnet.ipynb), we generate the SVM with rbf kernel and fit the model with the training data set:
 ```
 svm = SVC(kernel="rbf", random_state=69420)
 svm.fit(X_train_mm,y_train)
@@ -192,7 +192,7 @@ print(classification_report(y_test, yhat))
 ...
 
 ## Conclusion
-From our results, we see that we can predict with high accuracy whether an image on a website  with the same independent features is an advertisement or not with the models we created with UC Irvine’s Internet Advertisements dataset. We believe our models could be useful in identifying advertisements in websites for ad blocking or search engine results. Because the Internet undergoes many changes, our model’s accuracy could be much worse when trying to predict on more recent data since the dataset we trained with is from 1998. Therefore, we could train our model with more recent data for further optimization of our classifying model.
+From our results, we see that we can predict with high accuracy whether an image on a website  with the same independent features is an advertisement or not with the models we created with UC Irvine’s Internet Advertisements dataset. We believe our models could be useful in identifying advertisements in websites for ad blocking or search engine results. Because the Internet undergoes many changes, our models’ accuracy could be much worse when trying to predict on more recent data since the dataset we trained with is from 1998. Therefore, we could train our models with more recent data for further optimization of our classifying models.
 
 ## Collaboration
 
