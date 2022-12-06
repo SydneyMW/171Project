@@ -181,7 +181,7 @@ Below, in *Figure 1*, is the pairplot, that was generated in the [data_explorati
 
 ![image](https://user-images.githubusercontent.com/37519138/202835315-090892b8-6d0a-45a2-ac63-aa27daae4087.png)
 
-Another visual component of our data preprocessing and exploration process, is a correlation matrix, presented below in *Figure 2*. It shows the correlation coefficients between the same three features as in the pairplot above. Here, we can notice that there is a high positive correlation between ad classification and image width. Such outcome allows us to conclude that width should be inCluded in our models, as it is one of the more important parameters. 
+Another visual component of our data preprocessing and exploration process, is a correlation matrix, presented below in *Figure 2*. It shows the correlation coefficients between the same three features as in the pairplot above. Here, we can notice that there is a high positive correlation between ad classification and image width. Such outcome allows us to conclude that width should be included in our models, as it is one of the more important parameters. Additionally, since we see that no two independent variables show high collinearity, we can use all independent variables in our models without undermining our result's statistical significance due to multicollinearity.
 
 #### Figure 2 -- Correlation Matrix
 
@@ -190,7 +190,7 @@ Another visual component of our data preprocessing and exploration process, is a
 
 ### 2. Model 1 -- Logistic Regression
 
-The Logistic Regression Model's results are gathered and furthere assesed based on a classification report. Displayed below is the data we gathered in respect to both training and testing data partitions.
+The Logistic Regression Model's results are gathered and furthered assesed based on a classification report. Displayed below is the data we gathered in respect to both training and testing data partitions.
 
 #### Figure 3.1 -- LR Classification Report (Training)
 
@@ -203,7 +203,7 @@ The Logistic Regression Model's results are gathered and furthere assesed based 
 
 ### 3. Model 2 -- Adversarial Neural Net Classifier
 
-In order to assess the success of our Neural Net model, we kept track of losses during training and testing, in addition to displaying classification report for both data partitions, similarly to our first model. The results to both can be found below. 
+In order to asess the success of our Neural Net model, we kept track of losses during training and testing, in addition to displaying classification report for both data partitions, similarly to our first model. The results to both can be find below. 
 
 #### Figure 4.1 -- NN Classification Report (Training)
 
@@ -264,6 +264,6 @@ From our results, we see that we can predict with high accuracy whether an image
 
 **Henry:**
 
-**Rongshan:**
+**Rongshan:** plotted correlation figures during data preprocessing/exploration, wrote analysis on figures and significances to our results , wrote introduction
 
 **Sydney:** code to turn unformatted data into useable csv, code to perform scaling and imputing on data and generate pairplot, code for preliminary logistic regression and neural net models and evaluation, wrote “Model Fitting” section of milestone md, wrote data pre-processing and data exploration sections of readme md
