@@ -213,16 +213,16 @@ In order to assess the success of our Neural Net model, we kept track of losses 
 
 ![image](https://user-images.githubusercontent.com/75039761/205829777-e921f9d0-27fe-4c57-85b0-3761e3c39273.png)
 
-#### Figure 4.3 -- NN Performance Plot (Loss)
+#### Figure 4.3 -- NN Performance Plot (Accuracy)
 
 ![image](https://user-images.githubusercontent.com/75039761/205835718-a0b490c7-69cd-4980-abd3-594abcacd544.png)
 
-#### Figure 4.4 -- NN Performance Plot (Accuracy)
+#### Figure 4.4 -- NN Performance Plot (Loss)
 
 ![image](https://user-images.githubusercontent.com/75039761/205835836-3453e670-d9a6-48fc-918f-7d9e37ee28f0.png)
 
 ### 4. Model 3 -- Support Vector Machine 
-Finally, the outcomes of our third model, the SVM Classifier, are dispalyed in the form of a testing classification report in the figure below. 
+Finally, the outcomes of our third model, the SVM Classifier, are displayed in the form of a testing classification report in the figure below. 
 
 #### Figure 5 -- SVM Classification Report (Testing)
 
