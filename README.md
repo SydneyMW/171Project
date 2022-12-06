@@ -223,7 +223,24 @@ Another visual component of our data preprocessing and exploration process, is a
 
 
 ## Discussion
-...
+
+### Overall Model Choice Rationale 
+
+
+### Models Performance Assessment 
+
+**1. Logistic Regression Model:**
+
+Referring back to *Figure 3.1* and *Figure 3.2*, we conclude that our model was able to achieve an accuracy of 0.99 in our training data partition, and an accuracy of 0.98 in our testing partition. Such high level of success, as well as very similar results in both training and testing error, indicates adequacy of our choice for the model and its implementation.
+
+**2. Adversarial Neural Net Model:**
+
+The performance of our Neural Net Classifier was comparatevely as good as that of a simpler model analyzed above. As it can be seen from *Figure 4.1* and *Figure 4.2*, the   model achieved a training accuracy of 0.99 and a testing accuracy of 0.97. Despite the complexity and multi-layer constitution of the neural net, our model was able to perfrom extremely well. Such consistency of results between the first two models built indicates a high elvel of quality of the data used. 
+
+**3. SVM Model:** 
+    
+
+
 
 ## Conclusion
 From our results, we see that we can predict with high accuracy whether an image on a website  with the same independent features is an advertisement or not with the models we created with UC Irvine’s Internet Advertisements dataset. We believe our models could be useful in identifying advertisements in websites for ad blocking or search engine results. Because the Internet undergoes many changes, our models’ accuracy could be much worse when trying to predict on more recent data since the dataset we trained with is from 1998. Therefore, we could train our models with more recent data for further optimization of our classifying models.
