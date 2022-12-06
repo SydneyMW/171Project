@@ -187,7 +187,7 @@ Another visual component of our data preprocessing and exploration process, is a
 
 ### 2. Model 1 -- Logistic Regression
 
-The first model 
+The Logistic Regression Model's results are gathered and furthered assesed based on a classification report. Displayed below is the data we gathered in respect to both training and testing data partitions.
 
 #### Figure 3.1 -- LR Classification Report (Training)
 
@@ -199,6 +199,8 @@ The first model
 
 
 ### 3. Model 2 -- Adversarial Neural Net Classifier
+
+In order to asess the success of our Neural Net model, we kept track of losses during training and testing, in addition to displaying classification report for both data partitions, similarly to our first model. The results to both can be find below. 
 
 #### Figure 4.1 -- NN Classification Report (Training)
 
@@ -217,6 +219,7 @@ The first model
 ![image](https://user-images.githubusercontent.com/75039761/205835836-3453e670-d9a6-48fc-918f-7d9e37ee28f0.png)
 
 ### 4. Model 3 -- Support Vector Machine 
+Finally, the outcomes of our third model, the SVM Claasifier, are dispalyed in the form of a training classification report in the figure below. 
 
 #### Figure 5 -- SVM Classification Report (Testing)
 
@@ -226,27 +229,26 @@ The first model
 ## Discussion
 
 ### Overall Model Choice Rationale 
-
 In preparation for model building, we first had to assess the problem in question and the dataset we are to wrok with, in order to make an adequate model choice. Therefore, referring back to the binary classification structure of ad/non-ad predictions, we first chose to build a Logistic Regression Model. In additon to that, we chose this model because of its' relatively simple implementation, and ability to mitigate the issue of our dataset having a lot of distinctive features. Our next model choice was a Simple Neural Net Classifier, that allowed us to perform a more complex analysis. Although the number of layers and overall structure of this model might have been a little too complex for our problem of interest, we wanted to see if model complexity would have an impact. The third model was chosen to be built mostly out of curiosity, as a sort of sanity check on the results of the other two models.
 
 ### Models Performance Assessment 
 
 **1. Logistic Regression Model:**
-
 Referring back to *Figure 3.1* and *Figure 3.2*, we conclude that our model was able to achieve an accuracy of 0.99 in our training data partition, and an accuracy of 0.98 in our testing partition. Such high level of success, as well as very similar results in both training and testing error, indicates adequacy of our choice for the model and its implementation.
 
 **2. Adversarial Neural Net Model:**
-
-The performance of our Neural Net Classifier was comparatevely as good as that of a simpler model analyzed above. As it can be seen from *Figure 4.1* and *Figure 4.2*, the   model achieved a training accuracy of 0.99 and a testing accuracy of 0.97. Despite the complexity and multi-layer constitution of the neural net, our model was able to perfrom extremely well. Such consistency of results between the first two models built indicates a high elvel of quality of the data used. 
+The performance of our Neural Net Classifier was comparatevely as good as that of a simpler model analyzed above. As it can be seen from *Figure 4.1* and *Figure 4.2*, the   model achieved a training accuracy of 0.99 and a testing accuracy of 0.97. Despite the complexity and multi-layer constitution of the neural net, our model was able to perfrom extremely well. Such consistency of results between the first two models built indicates a high elvel of quality of the data used. Additional observations can be made based on *Figure 4.3* and *Figure 4.4*, that reflect losses recorded fro both training and testing. As we can see, losses decreased over time in training, testing losses reached a minimum very early on before spiking upwards, which may indicate slight overfitting of the model. 
 
 **3. SVM Model:** 
 The last model implemented to address the classification problem in question was a Support Vector Machine. Here, we should make a note of the fact that despite the great success of the two other models implemented, we ended up deciding to perform an SVM training as well, majorly out of curiocity. As expected, by this point, the testing results of our model reached an accuracy of 0.97, which can be seen in *Figure 5*. Again, ultimate success. 
 
-### Footnote 
-All of the three models implemented to classify images on a website as adverisment showed consistently high accuracy, as well as very close similarity between the results acquired from testing and training the data partitions in each of the models. As mentioned previously, such success can be attributed, most likely, to the fact that the data fed into the models is of high level of quality and predictiveness. 
+### Footnote and Shortcomings
+All of the three models implemented to classify images on a website as adverisment showed consistently high accuracy, as well as very close similarity between the results acquired from testing and training the data partitions in each of the models. As mentioned previously, such success can be attributed, most likely, to the fact that the data fed into the models is of high level of quality and predictiveness. In additon to that, again based on the similarity of training and testing errors in each model, we can conclude that our models should not suffer from overfitting. 
+
+That being said, one shortcoming of our model is that we do not know if it would perform as successfully on a less predictive dataset. As mentioned before, our models achieve equally excellent accuracy, which might as well be a direct product of the high quality of the data used. On the other hand, given a less "perfect" data, we cannot quarantee good performance of either of our models.  
 
 ## Conclusion
-From our results, we see that we can predict with high accuracy whether an image on a website  with the same independent features is an advertisement or not with the models we created with UC Irvine’s Internet Advertisements dataset. We believe our models could be useful in identifying advertisements in websites for ad blocking or search engine results. Because the Internet undergoes many changes, our models’ accuracy could be much worse when trying to predict on more recent data since the dataset we trained with is from 1998. Therefore, we could train our models with more recent data for further optimization of our classifying models. On the other hand, adding more training data may also significantly increase the complexity of the models. So, creating a brand new model for newer ads may be a more appropriate approach. The specific method chosen depends on the types of ads a client would most want to classify. In any case, the tool of ad classification lends itself to many uses.
+From our results, we see that we can predict with high accuracy whether an image on a website  with the same independent features is an advertisement or not with the models we created with UC Irvine’s Internet Advertisements dataset. We believe our models could be useful in identifying advertisements in websites for ad blocking or search engine results. However, it should be noted that the dataset in question is rather old (it dates back to 1998). It is also wirth noting that the majority of modern day websites display video advertisments, as well as picture advertisments. That being said, one possible direction of further improvement of our models would be to take into consideration the video counterpart of online ads. By the same extent, we also conslude that due to the Internet undergoing many changes, our models’ accuracy could suffer as well, when performing classification on a more recent picture-only dataset. Therefore, we could train our models with more recent data for further optimization of our classifying models. 
 
 ## Collaboration
 
